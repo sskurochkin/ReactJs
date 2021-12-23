@@ -8,13 +8,21 @@ export function Form() {
 
     const submitHandler = (e) =>{
         e.preventDefault()
-        alert.show(value, 'success')
+
+
+        if(value.trim()){
+            alert.show('Заметка была создана', 'success')
+            setValue('')
+        } else{
+            alert.show('Введите название заметки', 'warning')
+        }
     }
 
     return ( 
         <form onSubmit={submitHandler}>
             <div className='form-group'>
                 <input
+                    value={value}
                     type='text'
                     className='form-control'
                     placeholder='Введите название заметки'

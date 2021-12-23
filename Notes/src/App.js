@@ -1,21 +1,28 @@
-import { useState } from "react";
-import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
+import React from "react";
+import { Route, Routes, BrowserRouter } from "react-router-dom";
 import Home from "./pages/Home";
 import Contact from "./pages/Contact";
 import { Navbar } from "./components/Navbar";
-import { CSSTransition } from "react-transition-group";
+import { AlertState } from "./context/alert/AlertState";
+import Alert from "./components/Alert";
+import FirebaseState from "./context/firebase/FirebaseState";
 
 function App() {
 	return (
-		<BrowserRouter>
-		<Navbar/>
-			<div className='container'>
-				<Routes>
-					<Route path='/' element={<Home/>} />
-					<Route path='/contact' element={<Contact/>} />
-				</Routes>
-			</div>
-		</BrowserRouter>
+		<FirebaseState>
+			<AlertState>
+				<BrowserRouter>
+					<Navbar />
+					<div className='container pt-4'>
+						<Alert />
+						<Routes>
+							<Route path='/' element={<Home />} />
+							<Route path='/contact' element={<Contact />} />
+						</Routes>
+					</div>
+				</BrowserRouter>
+			</AlertState>
+		</FirebaseState>
 	);
 }
 

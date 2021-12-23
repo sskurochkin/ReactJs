@@ -13,7 +13,7 @@ export function Alert() {
     return ( 
         <div className={`alert alert-${alert.type || 'warning'} alert-dismissible`}>
             <strong>Attention!</strong>
-            {alert.text}
+            &nbsp;{alert.text}
             <button 
             onClick={hide}
             className="close"
