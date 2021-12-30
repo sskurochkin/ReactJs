@@ -1,3 +1,3 @@
 # ReactJs
 
-My react app here
+My react study project and pet app here
