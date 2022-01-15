@@ -5,7 +5,7 @@ import Contact from "./pages/Contact";
 import { Navbar } from "./components/Navbar";
 import { AlertState } from "./context/alert/AlertState";
 import Alert from "./components/Alert";
-import FirebaseState from "./context/firebase/FirebaseState";
+import {FirebaseState} from "./context/firebase/FirebaseState";
 
 function App() {
 	return (
